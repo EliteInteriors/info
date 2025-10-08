@@ -9670,3 +9670,32 @@ h6 {
   padding: 0;
   list-style-type: none;
 }
+
+.portfolio-img video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- New Fade-in Hover Effect for Videos --- */
+
+/* This targets a portfolio item that contains a video.
+   It stops the original slide-up animation from happening. */
+.portfolio-item:has(video):hover .portfolio-img {
+    bottom: 0;
+}
+
+/* This styles the text overlay on a video item.
+   It positions it on top, makes it transparent by default,
+   and sets it up for a fade-in transition. */
+.portfolio-item:has(video) .portfolio-text {
+    bottom: 0;
+    opacity: 0;
+    background: rgba(37, 37, 49, 0.7); /* Semi-transparent background */
+    transition: opacity .5s;
+}
+
+/* When you hover over the video item, this fades in the text. */
+.portfolio-item:has(video):hover .portfolio-text {
+    opacity: 1;
+}
